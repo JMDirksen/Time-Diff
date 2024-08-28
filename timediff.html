@@ -1,15 +1,15 @@
 <html>
 	<script>
 		async function timediff() {
-			const apiUrl = 'https://worldtimeapi.org/api/timezone/Europe/Amsterdam'
+			const apiUrl = 'https://worldtimeapi.org/api/Etc/UTC'
 			const response = await fetch(apiUrl)
 			const json = await response.json()
 			const worldtime = new Date(Date.parse(json.utc_datetime))
 			const localtime = new Date()
 			const diffSec = (localtime.getTime()-worldtime.getTime())/1000
 			document.body.innerHTML =
-			"<pre>World Time: " + worldtime.getHours() +":"+ worldtime.getMinutes() + ":" + worldtime.getSeconds() + "." + worldtime.getMilliseconds() + "<br/>" +
-			"Local Time: " + localtime.getHours() +":"+ localtime.getMinutes() + ":" + localtime.getSeconds() + "." + localtime.getMilliseconds() + "<br/><br/>" +
+			"<pre>World Time: " + worldtime.getUTCHours() +":"+ worldtime.getUTCMinutes() + ":" + worldtime.getUTCSeconds() + "." + worldtime.getUTCMilliseconds() + " (UTC)<br/>" +
+			"Local Time: " + localtime.getUTCHours() +":"+ localtime.getUTCMinutes() + ":" + localtime.getUTCSeconds() + "." + localtime.getUTCMilliseconds() + " (UTC)<br/><br/>" +
 			"<b>Time difference: " + diffSec + " seconds</b></pre>"
 		}
 		timediff()
