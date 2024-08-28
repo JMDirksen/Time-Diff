@@ -1,7 +1,7 @@
 <html>
 	<script>
 		async function timediff() {
-			const apiUrl = 'http://worldtimeapi.org/api/timezone/Europe/Amsterdam'
+			const apiUrl = 'https://worldtimeapi.org/api/timezone/Europe/Amsterdam'
 			const response = await fetch(apiUrl)
 			const json = await response.json()
 			const worldtime = new Date(Date.parse(json.utc_datetime))
