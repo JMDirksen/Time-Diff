@@ -4,7 +4,7 @@
 	<title>Time Diff</title>
 	<script>
 		async function timediff() {
-			const apiUrl = 'https://worldtimeapi.org/api/Etc/UTC'
+			const apiUrl = 'https://worldtimeapi.org/api/timezone/Etc/UTC'
 			const response = await fetch(apiUrl)
 			const json = await response.json()
 			const worldtime = new Date(Date.parse(json.utc_datetime))
